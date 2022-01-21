@@ -5,7 +5,5 @@ workflows:
   build:
     jobs:
       - cypress/run:
-          record: true
-          parallel: true
-          parallelism: 2
+         
 
