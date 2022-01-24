@@ -11,5 +11,5 @@ workflows:
         - cypress/install
         record: true
         parallel: true
-        parallelism: 4
+        parallelism: 16
 
