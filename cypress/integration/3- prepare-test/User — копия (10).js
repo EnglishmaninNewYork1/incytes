@@ -74,7 +74,7 @@ describe('E2E Test', function () {
         cy.get("div[data-testid = 'left-navigation-top']", { timeout: 120000 }).should('exist').and('be.visible')
         cy.visit(testurl)
         cy.get("div[data-testid = 'left-nav-button-cases']", { timeout: 120000 }).should('exist').and('be.visible').click()
-        cy.url().should("include", "https://alpha.incytesdata-dev.com/cases")
+        cy.url({ timeout: 120000 }).should("include", "https://alpha.incytesdata-dev.com/cases")
         cy.get("div[data-testid = 'cases-wrapper']", { timeout: 120000 }).should('exist').and('be.visible')                     // Add case
         cy.get("button[data-testid = 'add-case-button']", { timeout: 120000 }).should('exist').and('be.visible').click()
         cy.get("div[data-testid = 'modal-container-content']", { timeout: 120000 }).should('exist').and('be.visible')
