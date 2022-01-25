@@ -97,7 +97,6 @@ describe('E2E Test', function () {
         cy.get("form[data-testid = 'patient-progress-container-form']", { timeout: 120000 }).should('exist').and('be.visible')
 
 
-
         cy.get("input[value = '2302']", { timeout: 120000 }).check()
         cy.get("input[value = '2333']", { timeout: 120000 }).check()
         cy.get("input[value = '3431']", { timeout: 120000 }).check()
@@ -125,8 +124,8 @@ describe('E2E Test', function () {
         cy.get("div[data-testid = 'mytasks-inner']", { timeout: 120000 }).should('exist').and('be.visible')
         cy.get("div[data-testid = 'component-label-paper-wrapper']", { timeout: 120000 }).should('exist').and('be.visible')
         cy.get("tr[data-testid = 'mytasks-row']", { timeout: 120000 }).should('exist').and('be.visible')
-        cy.get("span", { timeout: 120000 }).contains('Patient').click()
-        //Filter by Patient
+        cy.get("span", { timeout: 120000 }).contains('Patient').click()                                                                         //Filter by Patient
+
         cy.get("tr[data-testid = 'mytasks-row']", { timeout: 120000 }).should('exist').and('be.visible')
 
         cy.get("div[data-testid = 'left-nav-button-reports']", { timeout: 120000 }).should('exist').and('be.visible').click()

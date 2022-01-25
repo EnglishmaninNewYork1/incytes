@@ -125,8 +125,8 @@ describe('E2E Test', function () {
         cy.get("div[data-testid = 'mytasks-inner']", { timeout: 120000 }).should('exist').and('be.visible')
         cy.get("div[data-testid = 'component-label-paper-wrapper']", { timeout: 120000 }).should('exist').and('be.visible')
         cy.get("tr[data-testid = 'mytasks-row']", { timeout: 120000 }).should('exist').and('be.visible')
-        cy.get("span", { timeout: 120000 }).contains('Patient').click()
-        //Filter by Patient
+        cy.get("span", { timeout: 120000 }).contains('Patient').click()                                                                         //Filter by Patient
+
         cy.get("tr[data-testid = 'mytasks-row']", { timeout: 120000 }).should('exist').and('be.visible')
 
         cy.get("div[data-testid = 'left-nav-button-reports']", { timeout: 120000 }).should('exist').and('be.visible').click()
