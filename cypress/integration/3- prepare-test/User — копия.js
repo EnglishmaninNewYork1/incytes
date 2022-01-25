@@ -115,7 +115,7 @@ describe('E2E Test', function () {
         cy.get("input[value = '3482']", { timeout: 120000 }).check()
 
         cy.get("button[data-testid = 'button-save']", { timeout: 120000 }).click()    // Saving survey
-        cy.wait(5000)
+        
 
 
 
@@ -123,8 +123,10 @@ describe('E2E Test', function () {
         cy.url({ timeout: 120000 }).should("include", "https://alpha.incytesdata-dev.com/mytasks")
         cy.get("div[data-testid = 'mytasks-inner']", { timeout: 120000 }).should('exist').and('be.visible')
         cy.get("div[data-testid = 'component-label-paper-wrapper']", { timeout: 120000 }).should('exist').and('be.visible')
-        cy.get("tr[data-testid = 'mytasks-row']", { timeout: 120000 }).should('exist').and('be.visible'),
-        cy.get("span", { timeout: 120000 }).contains('Patient').click()                                                                    //Filter by Patient
+        cy.wait(30000)
+        cy.get("tr[data-testid = 'mytasks-row']", { timeout: 120000 }).should('exist').and('be.visible')
+        cy.get("span", { timeout: 120000 }).contains('Patient').click()
+        cy.wait(30000)                                                                                                                          //Filter by Patient
         cy.get("tr[data-testid = 'mytasks-row']", { timeout: 120000 }).should('exist').and('be.visible')
 
         cy.get("div[data-testid = 'left-nav-button-reports']", { timeout: 120000 }).should('exist').and('be.visible').click()
