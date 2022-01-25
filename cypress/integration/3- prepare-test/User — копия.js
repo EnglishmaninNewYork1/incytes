@@ -72,7 +72,6 @@ describe('E2E Test', function () {
         cy.reload()
 
         cy.get("div[data-testid = 'left-navigation-top']", { timeout: 120000 }).should('exist').and('be.visible')
-        cy.visit(testurl)
         cy.get("div[data-testid = 'left-nav-button-cases']", { timeout: 120000 }).should('exist').and('be.visible').click()
         cy.url({ timeout: 120000 }).should("include", "https://alpha.incytesdata-dev.com/cases")
         cy.get("div[data-testid = 'cases-wrapper']", { timeout: 120000 }).should('exist').and('be.visible')                     // Add case
@@ -87,7 +86,7 @@ describe('E2E Test', function () {
         cy.wait(1000)
         cy.get("input[id = 'sponsorId']", { timeout: 120000 }).type('{downarrow}').type('{enter}')                         // Creating case and waiting
         cy.wait(5000)
-        cy.url({ timeout: 120000 }).should("include", "https://alpha.incytesdata-dev.com/cases/")
+
 
 
         cy.get("div[data-testid = 'case-detail']", { timeout: 120000 }).should('exist').and('be.visible')
@@ -116,7 +115,7 @@ describe('E2E Test', function () {
 
         cy.get("button[data-testid = 'button-save']", { timeout: 120000 }).click()    // Saving survey
         cy.wait(20000)
-        
+
 
 
 
@@ -126,7 +125,7 @@ describe('E2E Test', function () {
         cy.get("div[data-testid = 'component-label-paper-wrapper']", { timeout: 120000 }).should('exist').and('be.visible')
         cy.get("tr[data-testid = 'mytasks-row']", { timeout: 120000 }).should('exist').and('be.visible')
         cy.get("span", { timeout: 120000 }).contains('Patient').click()                                                                         //Filter by Patient
-                                                                                                                                  
+
         cy.get("tr[data-testid = 'mytasks-row']", { timeout: 120000 }).should('exist').and('be.visible')
 
         cy.get("div[data-testid = 'left-nav-button-reports']", { timeout: 120000 }).should('exist').and('be.visible').click()
