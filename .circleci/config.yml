@@ -3,7 +3,6 @@ orbs:
   cypress: cypress-io/cypress@1
 workflows:
   build:
-    resource_class: medium
     jobs:   
     - cypress/install
     - cypress/run:
@@ -12,6 +11,6 @@ workflows:
         - cypress/install
         record: true
         parallel: true
-        parallelism: 16
+        parallelism: 20
          
 
