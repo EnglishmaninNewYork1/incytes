@@ -1,10 +1,10 @@
 
 var testurl = 'https://alpha.incytesdata-dev.com/'
 var password = "pacienT1" // Can be changed
-var email = "autotest.incytes+au1@gmail.com"
+var email = "autotest.incytes+au14@gmail.com"
 var phonecode = "7901"
 var teamname = "AutotestTeam"
-var defaultpatientmail = "autotest.incytes+a"
+var defaultpatientmail = "autotest.incytes+l"
 var patientmailboxname = "@gmail.com"
 var circle = "Autotest circle"
 
@@ -23,7 +23,7 @@ function getrandomemail() {
     for (var i = 0; i < 6; i++)
         text += possible.charAt(Math.floor(Math.random() * possible.length));
 
-    return defaultpatientmail+ text + patientmailboxname;
+    return defaultpatientmail + text + patientmailboxname;
 }
 
 function getrandomreportname() {
