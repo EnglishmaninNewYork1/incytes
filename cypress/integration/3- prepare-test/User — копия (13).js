@@ -42,7 +42,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false
 })
 
-ddescribe('E2E Test', function () {
+describe('E2E Test', function () {
 
     it("Cliician Login", () => {
 
@@ -90,11 +90,10 @@ ddescribe('E2E Test', function () {
         cy.wait(10000)
 
 
-
+        cy.get("div[data-testid = 'main-content-inner']", { timeout: 120000 }).should('exist').and('be.visible').scrollTo(0, 500)
         cy.get("div[data-testid = 'case-detail']", { timeout: 120000 }).should('exist').and('be.visible')
-        cy.get("div[data-testid = 'case-header-section']", { timeout: 120000 }).should('exist').and('be.visible')
-        cy.get("div[data-testid = 'component-label-paper-wrapper']", { timeout: 120000 }).should('exist').and('be.visible')       // Go to case detail and select first one
-        cy.get("div[data-testid = 'observational-protocol-menu-task']", { timeout: 120000 }).first().click()
+        cy.get("p[data-testid = 'component-label-paper-title']", { timeout: 120000 }).should('exist').and('be.visible')                                                                                                                      // Go to case detail and select first one
+        cy.get("div[data-testid = 'observational-protocol-menu-task']", { timeout: 120000 }).first().should('exist').and('be.visible').click() // Finding first survey
         cy.get("form[data-testid = 'patient-progress-container-form']", { timeout: 120000 }).should('exist').and('be.visible')
 
 
@@ -116,7 +115,7 @@ ddescribe('E2E Test', function () {
         cy.get("input[value = '3482']", { timeout: 120000 }).check()
 
         cy.get("button[data-testid = 'button-save']", { timeout: 120000 }).click()    // Saving survey
-        cy.wait(20000)
+        cy.wait(15000)
 
 
 
