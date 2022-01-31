@@ -1,7 +1,7 @@
 
 var testurl = 'https://alpha.incytesdata-dev.com/'
 var password = "pacienT1" // Can be changed
-var email = "autotest.incytes+au14@gmail.com"
+var email = "autotest.incytes+au6@gmail.com"
 var phonecode = "7901"
 var teamname = "AutotestTeam"
 var defaultpatientmail = "autotest.incytes+l"
