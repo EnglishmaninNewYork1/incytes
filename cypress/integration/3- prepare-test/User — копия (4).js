@@ -84,6 +84,7 @@ describe('E2E Test', function () {
 
         cy.get("input[id = 'sponsorId']", { timeout: 120000 }).should('exist').and('be.visible').type(circle)                // Select circle
         cy.wait(1000)
+        cy.get("div", { timeout: 120000 }).contains(circle).should('exist').and('be.visible')
         cy.get("div", { timeout: 120000 }).contains(circle).type('{downarrow}')
         cy.wait(1000)
         cy.get("button[data-testid = 'calm-button']", { timeout: 120000 }).click()                                               // Creating case and waiting
