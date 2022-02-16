@@ -63,7 +63,7 @@ describe('E2E Test', function () {
         cy.get("div[data-testid = 'user-profile']", { timeout: 120000 }).should('exist').and('be.visible')
         cy.get("button[data-testid = 'user-profile-header-button-edit']", { timeout: 120000 }).should('exist').and('be.visible').click() // Profile Modal random russian number and teamname filling and save
         cy.get("div[data-testid = 'modal-container-content']", { timeout: 120000 }).should('exist').and('be.visible')
-        cy.get("input[class = 'null form-control']", { timeout: 120000 }).clear().type(getrandomnumber())
+        cy.get("input[class = 'form-control null']", { timeout: 120000 }).clear().type(getrandomnumber())
         cy.get("input[name = 'teamName']", { timeout: 120000 }).clear().type(teamname)
         cy.get("button[data-testid = 'update-user-profile-button-save']", { timeout: 120000 }).click()
 
