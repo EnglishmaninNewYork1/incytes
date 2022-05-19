@@ -16,7 +16,8 @@
     "url": "https://github.com/Englishman-in-newYork/Cypress/issues"
   },
   "homepage": "https://github.com/Englishman-in-newYork/Cypress#readme",
-  "dependencies": {
-    "cypress": "^9.3.1"
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^9.6.1"
   }
 }
