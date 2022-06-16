@@ -20,6 +20,21 @@ module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
 }
+
+const path = require("path");
+const gmail = require("gmail-tester");
+
+const POLL_INTERVAL = 5;
+const MAX_POLL_INTERVAL = 20;
+
+function getCredentials(email) {
+    return path.resolve('\cypress\\plugins', 'credentialsgmail.json');
+}
+
+function getToken(email) {
+    return path.resolve('\cypress\\plugins', 'tokengmail.json');
+}
+
 module.exports = (on) => {
     on('before:browser:launch', (browser = {}, args) => {
         if (browser.name === 'chrome') {
@@ -29,4 +44,18 @@ module.exports = (on) => {
             return args
         }
     })
+}
+
+module.exports = (on, config) => {
+
+    on('task', {
+        'gmail:get-messages': async args => {
+            const messages = await gmail.get_messages(
+                await getCredentials(args.to),
+                await getToken(args.to),
+                args.options
+            );
+            return messages;
+        }
+    });
 }
