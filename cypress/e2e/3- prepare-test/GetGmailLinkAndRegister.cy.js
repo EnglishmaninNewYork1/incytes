@@ -3,7 +3,7 @@
 //write on cmd: node credentials.json token.json autotest.incytes1@gmail.com               Do it from gmail-tester-extended folder and then replace token and credentials files into cypress/plugins folder
 var password = "pacienT1" // Can be changed
 var email = "autotest.incytes1@gmail.com"
-describe('DTCP-0002 Old clinician can Reset Password to his account', function () {
+describe('Check Email and get the link from the last Email ', function () {
 
     it("Look for an email with specific subject ", function () {
 
