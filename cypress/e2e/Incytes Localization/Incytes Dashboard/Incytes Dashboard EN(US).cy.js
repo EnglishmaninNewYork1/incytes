@@ -8,14 +8,14 @@ var login_link = 'https://alpha.incytesdata-dev.com/auth/login/'
 var user_email_with_case = 'vitas.leschenko+cohortfiltertester@gmail.com'
 var user_email_without_case = 'vitas.leschenko+localizationtestaccount@gmail.com'
 var user_password = 'pacienT1'
-
+var language_cookie_set = 'en'
 
 describe('Incytes Navbar localization EN ', function () {
 
     it("Check Dashboard without outliers and Tasks ", function () {                 // CHECK PAGE WITHOUT TASK AND OUTLIERS
 
         cy.viewport(1920, 1080)
-        cy.setCookie('languageAbbreviation', 'en')                                                                                          // Set cookie variable to change language
+        cy.setCookie('languageAbbreviation', language_cookie_set)                                                                                          // Set cookie variable to change language
         cy.visit(login_link, {
             failOnStatusCode: false
         })
@@ -24,7 +24,7 @@ describe('Incytes Navbar localization EN ', function () {
         cy.get("input[name = 'password']").type(user_password)
         cy.get("button[data-testid = 'form-login-button-login']").click()
 
-        cy.get("h2[data-testid = 'personal-plan-title']", { "timeout": 5000 }).should('contain', 'Welcome to inCytes!')                     // Head Title
+        cy.get("h2[data-testid = 'personal-plan-title']", { "timeout": 10000 }).should('contain', 'Welcome to inCytes!')                     // Head Title
 
         cy.get("p[data-testid = 'component-label-paper-title']").should('contain', 'My Tasks')                                               //My tasks
         cy.get("h2[data-testid = 'dashboard-task-epmty-no-task']").should('contain', 'No Current Tasks.')                                    //No current tasks
@@ -49,7 +49,7 @@ describe('Incytes Navbar localization EN ', function () {
 
     it("Check Dashboard WITH outliers and Tasks ", function () {                                        // CHECK PAGE WITH!!! TASK AND OUTLIERS
         cy.viewport(1920, 1080)
-        cy.setCookie('languageAbbreviation', 'en')                                                                                  // Set cookie variable to change language
+        cy.setCookie('languageAbbreviation', language_cookie_set)                                                                                  // Set cookie variable to change language
         cy.visit(login_link, {
             failOnStatusCode: false,
             'timeout':10000
@@ -58,7 +58,7 @@ describe('Incytes Navbar localization EN ', function () {
         cy.get("input[name = 'password']").type(user_password)
         cy.get("button[data-testid = 'form-login-button-login']").click()
                                                                                                                                                     // MY TASKS BLOCK
-        cy.get("th[data-testid = 'task-head-case']").children('span').should('contain', 'PATIENT')                     //Patient                    
+        cy.get("th[data-testid = 'task-head-case']", { "timeout": 10000 }).children('span').should('contain', 'PATIENT')                     //Patient
         cy.get("th[data-testid = 'task-head-survey']").children('span').should('contain', 'CASE')                       //Case
         cy.get("th[data-testid = 'task-head-survey-info']").children('span').should('contain', 'TASK')                  //Task
         cy.get("th[data-testid = 'task-head-due']").children('span').should('contain', 'DUE DATE')                      //Due Date
@@ -70,7 +70,7 @@ describe('Incytes Navbar localization EN ', function () {
         cy.get("p[data-testid = 'dashboard-survey-alert-overdue-label']").should('contain', 'Overdue')                  //Overdue
         cy.get("h6[data-testid = 'alert-delegate-cell-patient']").should('contain', 'Patient')                          //Delegate-patient
                                                                                                                                                     //MY ALERTS BLOCK  
-        cy.get("th[data-testid = 'dashboard-alert-head-source']").children('span').should('contain', 'SOURCE')          //SOURCE
+        cy.get("th[data-testid = 'dashboard-alert-head-source']", { "timeout": 10000 }).children('span').should('contain', 'SOURCE')          //SOURCE
         cy.get("th[data-testid = 'dashboard-alert-head-type']").children('span').should('contain', 'TYPE')              //TYPE
         cy.get("th[data-testid = 'dashboard-alert-head-date']").children('h6').should('contain', 'ALERT DATE')          //Alert Date
         cy.get("h6[data-testid = 'invitation-type-cell-invite']").should('contain', 'Circle Invitation')                //Type - circle invitation
@@ -86,7 +86,7 @@ describe('Incytes Navbar localization EN ', function () {
 
         cy.reload()
 
-        cy.get("button[data-testid = 'outlier-alert-menu-button-more']").first().click()
+        cy.get("button[data-testid = 'outlier-alert-menu-button-more']", { "timeout": 10000 }).first().click()
         cy.get("li[data-testid = 'email-patient']").should('contain', 'Email Patient')                                  //More options - Email patient
         cy.get("li[data-testid = 'dismiss']").should('contain', 'Dismiss')                                              //Dismiss
 

@@ -70,7 +70,7 @@ describe('Incytes Navbar localization FR ', function () {
         cy.get("p[data-testid = 'dashboard-survey-alert-overdue-label']").should('contain', 'En retard')                  //Overdue
         cy.get("h6[data-testid = 'alert-delegate-cell-patient']").should('contain', 'Patient')                          //Delegate-patient
                                                                                                                                                     //MY ALERTS BLOCK  
-        cy.get("th[data-testid = 'dashboard-alert-head-source']").children('span').should('contain', 'LA SOURCE')          //SOURCE
+        cy.get("th[data-testid = 'dashboard-alert-head-source']", { "timeout": 10000 }).children('span').should('contain', 'LA SOURCE')          //SOURCE
         cy.get("th[data-testid = 'dashboard-alert-head-type']").children('span').should('contain', 'TYPE')              //TYPE
         cy.get("th[data-testid = 'dashboard-alert-head-date']").children('h6').should('contain', "DATE D'ALERTE")          //Alert Date
         cy.get("h6[data-testid = 'invitation-type-cell-invite']").should('contain', 'Invitation au Cercle')                //Type - circle invitation

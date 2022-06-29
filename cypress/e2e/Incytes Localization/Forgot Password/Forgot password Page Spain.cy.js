@@ -33,7 +33,7 @@ describe('Forgot password page localization ES ', function () {
         cy.get("h6[data-testid = 'snackbar-text']").should('contain', "No pudimos verificar esa dirección de correo electrónico. Vuelva a ingresar.")  // Not registered email in system check
 
         cy.get("input[name = 'email']").clear()
-        cy.get("input[name = 'email']").type('vitas.leschenko+testbbbbbnnn@gmail.com')
+        cy.get("input[name = 'email']").type('vitas.leschenko+conditionalvisibilitytest@gmail.com')
         cy.get("button[type = 'submit']").click()
 
 

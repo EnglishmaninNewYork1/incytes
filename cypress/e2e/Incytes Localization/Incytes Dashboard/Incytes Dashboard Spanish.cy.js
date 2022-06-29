@@ -70,7 +70,7 @@ describe('Incytes Navbar localization ES ', function () {
         cy.get("p[data-testid = 'dashboard-survey-alert-overdue-label']").should('contain', 'Atrasado')                  //Overdue
         cy.get("h6[data-testid = 'alert-delegate-cell-patient']").should('contain', 'Paciente')                          //Delegate-patient
                                                                                                                                                     //MY ALERTS BLOCK  
-        cy.get("th[data-testid = 'dashboard-alert-head-source']").children('span').should('contain', 'FUENTE')          //SOURCE
+        cy.get("th[data-testid = 'dashboard-alert-head-source']", { "timeout": 10000 }).children('span').should('contain', 'FUENTE')          //SOURCE
         cy.get("th[data-testid = 'dashboard-alert-head-type']").children('span').should('contain', 'TIPO')              //TYPE
         cy.get("th[data-testid = 'dashboard-alert-head-date']").children('h6').should('contain', 'FECHA ENCUESTA')          //Alert Date
         cy.get("h6[data-testid = 'invitation-type-cell-invite']").should('contain', 'Invitación Circular')                //Type - circle invitation
@@ -86,7 +86,7 @@ describe('Incytes Navbar localization ES ', function () {
 
         cy.reload()
 
-        cy.get("button[data-testid = 'outlier-alert-menu-button-more']").first().click()
+        cy.get("button[data-testid = 'outlier-alert-menu-button-more']", { "timeout": 10000 }).first().click()
         cy.get("li[data-testid = 'email-patient']").should('contain', 'Enviar correo electrónico')                                  //More options - Email patient
         cy.get("li[data-testid = 'dismiss']").should('contain', 'Descartar')                                              //Dismiss
 
