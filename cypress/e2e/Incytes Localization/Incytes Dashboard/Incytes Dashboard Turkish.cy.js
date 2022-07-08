@@ -79,7 +79,7 @@ describe('Incytes Navbar localization TR ', function () {
         cy.get("li[data-testid = 'accept']").should('contain', 'Kabul etmek')                                                //More options - Accept
         cy.get("li[data-testid = 'decline']").should('contain', 'Reddetmek')                                              //More options - Decline
 
-        cy.get("h6[data-testid = 'outlier-alert-delegate-email']").should('contain', 'Hasta ID')                      //Source- Patient ID
+        
         cy.get("h6[data-testid = 'outlier-type-cell-title']").should('contain', 'Aykırı değer algılandı')                     // Type - Outlier detected
         cy.get("p[data-testid = 'outlier-type-cell-lower-fence']").should('contain', 'Alt sınır')                     //Type - Lower limit
         cy.get("p[data-testid = 'outlier-type-cell-upper-fence']").should('contain', 'Üst sınır')                     //Type - Upper limit

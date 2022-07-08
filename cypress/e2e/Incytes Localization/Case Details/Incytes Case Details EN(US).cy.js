@@ -4,7 +4,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false
 })
 
-var login_link = 'https://alpha.incytesdata-dev.com/auth/login/'
+var case_link = 'https://alpha.incytesdata-dev.com/cases/11314309/survey/0/instance/0/delegate/0/status/0'
 var user_email = 'vitas.leschenko+cohortfiltertester@gmail.com'
 var user_password = 'pacienT1'
 var language_cookie_set = 'en'
@@ -15,7 +15,7 @@ describe('Incytes Case Details localization EN ', function () {
 
         cy.viewport(1920, 1080)
         cy.setCookie('languageAbbreviation', language_cookie_set)                                                                          // Set cookie variable to change language
-        cy.visit(login_link, {
+        cy.visit(case_link, {
             failOnStatusCode: false
         })
 
@@ -23,8 +23,6 @@ describe('Incytes Case Details localization EN ', function () {
         cy.get("input[name = 'password']").type(user_password)
         cy.get("button[data-testid = 'form-login-button-login']").click()
 
-        cy.get("a[href = '/cases']", { "timeout": 10000 }).click()
-        cy.get("a[data-testid = 'case-cell-link']", {"timeout": 10000}).first().click()
 
         cy.get("a[data-testid = 'case-detail-link']", { "timeout": 10000 }).children('p').should('contain', 'BACK TO CASE OVERVIEW')                            // Back to case overview link
 
@@ -65,8 +63,12 @@ describe('Incytes Case Details localization EN ', function () {
         cy.get("p[data-testid = 'case-outlier-alert-delegate-patient']").first().should('contain', 'Patient')
         cy.get("button[aria-label = 'more']").first().click()
         cy.get("li[data-testid = 'case-outlier-alert-menu-item']").should('contain', 'Dismiss')
-        cy.get("div[data-testid = 'observational-protocol-menu-task']").first().click({force:true})
-        cy.get("div[data-testid = 'case-outlier-alert-type-cell']").children('div').children('div').children('div').first().next().children('p').should('contain', 'Lower limit')
+        cy.get("div[data-testid = 'observational-protocol-menu-task']").first().click({ force: true })
+
+        cy.get("div[data-testid = 'case-surveys-alert-cell']").children('p').should('contain', 'Post-Treatment')
+        cy.get("p[data-testid = 'case-surveys-type-overdue']").should('contain', 'Overdue')
+
+        cy.get("span[data-testid = 'case-surveys-alert-date-overdue']").children('div').children('div').last().should('contain', 'Overdue')
     })
 
 })

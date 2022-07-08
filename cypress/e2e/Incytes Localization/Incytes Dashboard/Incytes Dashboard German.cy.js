@@ -80,7 +80,7 @@ describe('Incytes Navbar localization DE ', function () {
         cy.get("li[data-testid = 'accept']").should('contain', 'Akzeptieren')                                                //More options - Accept
         cy.get("li[data-testid = 'decline']").should('contain', 'Ablehnen')                                              //More options - Decline
 
-        cy.get("h6[data-testid = 'outlier-alert-delegate-email']").should('contain', 'Patienten ID')                      //Source- Patient ID
+        
         cy.get("h6[data-testid = 'outlier-type-cell-title']").should('contain', 'Ausreißer Erkannt')                     // Type - Outlier detected
         cy.get("p[data-testid = 'outlier-type-cell-lower-fence']").should('contain', 'Untere Grenze')                     //Type - Lower limit
         cy.get("p[data-testid = 'outlier-type-cell-upper-fence']").should('contain', 'Obergrenze')                     //Type - Upper limit

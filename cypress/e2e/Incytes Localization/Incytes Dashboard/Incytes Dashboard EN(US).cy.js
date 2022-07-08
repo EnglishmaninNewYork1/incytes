@@ -79,7 +79,7 @@ describe('Incytes Navbar localization EN ', function () {
         cy.get("li[data-testid = 'accept']").should('contain', 'Accept')                                                //More options - Accept
         cy.get("li[data-testid = 'decline']").should('contain', 'Decline')                                              //More options - Decline
 
-        cy.get("h6[data-testid = 'outlier-alert-delegate-email']").should('contain', 'Patient ID')                      //Source- Patient ID
+        
         cy.get("h6[data-testid = 'outlier-type-cell-title']").should('contain', 'Outlier Detected')                     // Type - Outlier detected
         cy.get("p[data-testid = 'outlier-type-cell-lower-fence']").should('contain', 'Lower limit')                     //Type - Lower limit
         cy.get("p[data-testid = 'outlier-type-cell-upper-fence']").should('contain', 'Upper limit')                     //Type - Upper limit

@@ -58,7 +58,7 @@ describe('Incytes Navbar localization IT ', function () {
         cy.get("input[name = 'password']").type(user_password)
         cy.get("button[data-testid = 'form-login-button-login']").click()
                                                                                                                                                     // MY TASKS BLOCK
-        cy.get("th[data-testid = 'task-head-case']").children('span').should('contain', 'PAZIENTE')                     //Patient
+        cy.get("th[data-testid = 'task-head-case']", { "timeout": 10000 }).children('span').should('contain', 'PAZIENTE')                     //Patient
         cy.get("th[data-testid = 'task-head-survey']").children('span').should('contain', 'CASO')                       //Case
         cy.get("th[data-testid = 'task-head-survey-info']").children('span').should('contain', 'ATTIVITÀ')                  //Task
         cy.get("th[data-testid = 'task-head-due']").children('span').should('contain', 'SCADENZA')                      //Due Date
@@ -79,7 +79,7 @@ describe('Incytes Navbar localization IT ', function () {
         cy.get("li[data-testid = 'accept']").should('contain', 'Accettare')                                                //More options - Accept
         cy.get("li[data-testid = 'decline']").should('contain', 'Declinare')                                              //More options - Decline
 
-        cy.get("h6[data-testid = 'outlier-alert-delegate-email']").should('contain', 'ID paziente')                      //Source- Patient ID
+        
         cy.get("h6[data-testid = 'outlier-type-cell-title']").should('contain', 'Outlier Rilevato')                     // Type - Outlier detected
         cy.get("p[data-testid = 'outlier-type-cell-lower-fence']").should('contain', 'Limite inferiore')                     //Type - Lower limit
         cy.get("p[data-testid = 'outlier-type-cell-upper-fence']").should('contain', 'Limite superiore')                     //Type - Upper limit
